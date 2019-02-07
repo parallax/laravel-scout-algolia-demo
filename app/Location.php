@@ -45,6 +45,12 @@ class Location extends Model
         // Add relational data into index
 //        $array['manager_name'] = $this->manager->name;
 
+        // Configure Geo Data
+        $array['_geoloc'] = [
+            'lat' => $array['latitude'],
+            'lng' => $array['longitude']
+        ];
+
         return $array;
     }
 }

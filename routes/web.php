@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/demo/search', 'DemoController@search')->name('demo.search');
 Route::post('/demo/search/results', 'DemoController@searchResults')->name('demo.search.results');
+
+Route::get('/demo/geo', 'DemoController@geo')->name('demo.geo');
+Route::post('/demo/geo/results', 'DemoController@geoResults')->name('demo.geo.results');

@@ -17,4 +17,21 @@ class DemoController extends Controller
         $results = Location::search($request->get('search'))->get();
         return view('demo.search')->with(['results' => $results]);
     }
+
+    public function geo()
+    {
+        return view('demo.geo');
+    }
+
+    public function geoResults(Request $request)
+    {
+        $results = Location::search($request->get('search'))
+            ->aroundLatLng($request->get('latitude'), $request->get('longitude'))
+            ->with( [
+                'aroundRadius' => $request->get('radius')
+            ])
+            ->get();
+
+        return view('demo.geo')->with(['results' => $results]);
+    }
 }

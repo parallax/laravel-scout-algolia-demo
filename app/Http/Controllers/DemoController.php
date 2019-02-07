@@ -27,7 +27,7 @@ class DemoController extends Controller
     {
         $results = Location::search($request->get('search'))
             ->aroundLatLng($request->get('latitude'), $request->get('longitude'))
-            ->with( [
+            ->with([
                 'aroundRadius' => $request->get('radius')
             ])
             ->get();

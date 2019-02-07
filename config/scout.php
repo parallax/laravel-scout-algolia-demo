@@ -29,6 +29,7 @@ return [
     */
 
     'prefix' => env('SCOUT_PREFIX', ''),
+//    'prefix' => env('SCOUT_PREFIX', env('APP_ENV', 'local')) . '_',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +43,6 @@ return [
     */
 
     'queue' => env('SCOUT_QUEUE', false),
-//    'queue' => env('SCOUT_QUEUE', env('APP_ENV', 'local')) . '_',
 
     /*
     |--------------------------------------------------------------------------

@@ -1,5 +1,7 @@
 <?php
 
+use App\Blog;
+use App\Event;
 use App\Location;
 use App\Manager;
 use Illuminate\Database\Seeder;
@@ -41,6 +43,18 @@ class DatabaseSeeder extends Seeder
             Manager::create([
                 'name' => $faker->name,
                 'location_id' => $location->id
+            ]);
+
+            Blog::create([
+                'title' => $faker->sentence,
+                'content' => $faker->paragraphs(3, true)
+            ]);
+
+            Event::create([
+                'title' => $faker->sentence,
+                'content' => $faker->paragraphs(3, true),
+                'event_start' => $faker->dateTime,
+                'event_end' => $faker->dateTime
             ]);
         }
     }

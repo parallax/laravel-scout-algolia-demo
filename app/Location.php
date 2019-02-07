@@ -24,6 +24,25 @@ class Location extends Model
         return $this->hasOne('App\Manager', 'location_id');
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function shouldBeSearchable()
+    {
+        return true;
+        //return $this->isPublished();
+    }
+
+    /**
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return config('scout.prefix') . 'locations';
+    }
+
+
     /**
      * Get the indexable data array for the model.
      *
@@ -32,7 +51,7 @@ class Location extends Model
     public function toSearchableArray()
     {
         // Call manager relationship
-        $this->manager;
+//        $this->manager;
 
         $array = $this->toArray();
 
@@ -40,16 +59,16 @@ class Location extends Model
         $array = $this->transform($array);
 
         // Add an extra attribute:
-        //$array['created_month'] = date('F', strtotime($array['created_at']));
+//        $array['created_month'] = date('F', strtotime($array['created_at']));
 
         // Add relational data into index
 //        $array['manager_name'] = $this->manager->name;
 
         // Configure Geo Data
-        $array['_geoloc'] = [
-            'lat' => $array['latitude'],
-            'lng' => $array['longitude']
-        ];
+//        $array['_geoloc'] = [
+//            'lat' => $array['latitude'],
+//            'lng' => $array['longitude']
+//        ];
 
         return $array;
     }

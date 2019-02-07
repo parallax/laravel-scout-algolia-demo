@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/demo/search', 'DemoController@search')->name('demo.search');
+Route::post('/demo/search/results', 'DemoController@searchResults')->name('demo.search.results');

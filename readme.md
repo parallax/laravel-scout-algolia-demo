@@ -1,5 +1,7 @@
 # Laravel Leeds #1 - Scout & Algolia Demo
 
+The presentation given at Laravel Leeds is available at: (https://github.com/parallax/laravel-scout-algolia-demo/blob/master/LaravelLeeds%231.pdf)
+
 This contains a the full codebase of the Laravel Leeds #1 talk on building advanced searches with Algolia.
 
 ### Setup
